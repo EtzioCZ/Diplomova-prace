@@ -7,29 +7,29 @@ class Analyzer : public Component
 
 public:
     Analyzer();
-    //vykreslovací metoda 
+    //vykreslovacÃ­ metoda 
     void paint(Graphics& g) override;             
-    // vykreslovací metoda FFT
+    // vykreslovacÃ­ metoda FFT
     void drawFrame(Graphics& g);          
-    // plnìní FIFO
+    // plnÃ¬nÃ­ FIFO
     void pushNextSampleIntoFifo(float sample) noexcept;      
-    // vıpoèet bodù pro analyzér
+    // vÃ½poÃ¨et bodÃ¹ pro analyzÃ©r
     void drawNextFrameOfSpectrum();                            
 
-    // soubor hlášek pro uivatele
+    // soubor hlÃ¡Å¡ek pro uÅ¾ivatele
 
-    // Obraz neúspìšnì nahrán
+    // Obraz neÃºspÃ¬Å¡nÃ¬ nahrÃ¡n
     void LoadFileErr();
-    // Obraz úspìšnì nahrán
+    // Obraz ÃºspÃ¬Å¡nÃ¬ nahrÃ¡n
     void LoadFileSuccessfully();
-    // Obraz úspìšnì uloen
+    // Obraz ÃºspÃ¬Å¡nÃ¬ uloÅ¾en
     void FileSavedSuccessfully();
-    // Uka default
+    // UkaÅ¾ default
     void ShowDefault();
 
     String strDisplayText = "Visualization of sound signal";
 
-    // nastavení vlastností FFT
+    // nastavenÃ­ vlastnostÃ­ FFT
     enum
     {
         fftOrder = 12,
