@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2019
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SoloProObraz - App", "SoloProObraz_App.vcxproj", "{3C82BC55-4583-09D9-8586-56E9396F0FDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C82BC55-4583-09D9-8586-56E9396F0FDF}.Debug|x64.ActiveCfg = Debug|x64
+		{3C82BC55-4583-09D9-8586-56E9396F0FDF}.Debug|x64.Build.0 = Debug|x64
+		{3C82BC55-4583-09D9-8586-56E9396F0FDF}.Release|x64.ActiveCfg = Release|x64
+		{3C82BC55-4583-09D9-8586-56E9396F0FDF}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
