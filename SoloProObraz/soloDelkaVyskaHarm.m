@@ -30,10 +30,10 @@ nazev_tonu = ["Cn0", "Cs0", "Dn0" "Ds0" "En0" "Fn0" "Fs0" "Gn0" "Gs0" "An0" "As0
 
 %% new downsample
 [x,y,z]=size(RGB);
-newsize = 5;                 %ËÌso urËuje, na jakou hodnotu se m· zaokrouhlit
+newsize = 5;                 %√®√≠so ur√®uje, na jakou hodnotu se m√° zaokrouhlit
 
 if (newsize>x || newsize>y)== 1
-  disp('nesmÌte zvolit vyööÌ hodnotu neû je st·vajÌcÌ obr·zek')
+  disp('nesm√≠te zvolit vy≈°≈°√≠ hodnotu ne≈æ je st√°vaj√≠c√≠ obr√°zek')
     return
 end
 
@@ -60,13 +60,13 @@ while x~=newsize
  
 end
 %imagesc(RGB);
-%% p¯evody 
+%% p√∏evody 
 %HSV
 RGB = uint8(RGB);
 hsv = (rgb2hsv(RGB));
-H =hsv(:,:,1);          %0 - 1 hue odstÌn - pouze barva; H=0 odstÌny öedi 
-S =hsv(:,:,2);          %sytost - pod 20% je to stupeÚ öedi, 
-V =hsv(:,:,3);          %hodnota jasu - mnoûstvÌ bÌlÈho svÏtla - 0.9<= bÌl·, 5>Ëern·,
+H =hsv(:,:,1);          %0 - 1 hue odst√≠n - pouze barva; H=0 odst√≠ny ≈°edi 
+S =hsv(:,:,2);          %sytost - pod 20% je to stupe√≤ ≈°edi, 
+V =hsv(:,:,3);          %hodnota jasu - mno≈æstv√≠ b√≠l√©ho sv√¨tla - 0.9<= b√≠l√°, 5>√®ern√°,
 
 %YCbCr
 YCbCr = rgb2ycbcr(RGB);
@@ -80,19 +80,19 @@ max_harm = 20;
 
 treshS = linspace(0,1,max_harm+1);
 treshS = treshS(2:end-1);
-Sq= imquantize(S,treshS);               %S = poËet harmonick˝ch
+Sq= imquantize(S,treshS);               %S = po√®et harmonick√Ωch
 treshH = 0.5;
-Hq = imquantize(H,treshH);              %H = vÌce sudÈ/vöechny
+Hq = imquantize(H,treshH);              %H = v√≠ce sud√©/v≈°echny
 Hq = Hq-1;                              % 0 a 1
 treshV = linspace(0,1,pocet_ruznych_tonu_v_solu+1);
 treshV = treshV(2:end-1);
-Vq = imquantize(V,treshV);              %V = v˝öka tÛnu
-treshY = linspace(0,1,3+1);             %5 pro öestn·ctiny, 3 pro Ëtvrtiny, 1 pro celÈ
-treshY = treshY(2:end-1);               %Y = trv·nÌ noty
-Yq = imquantize(Y,treshY);              %R = Ëerven· - amplituda vyööÌch harm
-                                        %B = modr· - amplituda prvnÌch
-                                        %harmonick˝hc
-Yq = Yq-1;                              %G - zelen· - amplituda st¯ednÌch harmonick˝h
+Vq = imquantize(V,treshV);              %V = v√Ω≈°ka t√≥nu
+treshY = linspace(0,1,3+1);             %5 pro ≈°estn√°ctiny, 3 pro √®tvrtiny, 1 pro cel√©
+treshY = treshY(2:end-1);               %Y = trv√°n√≠ noty
+Yq = imquantize(Y,treshY);              %R = √®erven√° - amplituda vy≈°≈°√≠ch harm
+                                        %B = modr√° - amplituda prvn√≠ch
+                                        %harmonick√Ωhc
+Yq = Yq-1;                              %G - zelen√° - amplituda st√∏edn√≠ch harmonick√Ωh
 
 %% transformace matic do vektoru
 Value = spiralTransform(Vq,0);
@@ -103,12 +103,12 @@ Saturation = spiralTransform(Sq,0);
 Hue = spiralTransform(Hq,0);
 Y = spiralTransform(Yq,0);
 
-%% definice promÏnn˝ch pro tvorbu zvuku
+%% definice prom√¨nn√Ωch pro tvorbu zvuku
 fs = 44100;
 ts = 1/fs;
 trvanigranule = 200 ;                    %v ms
 velikostokna=round((fs/1000)*(trvanigranule));
-n = 0:velikostokna-1;                   %poËet vzork˘ pro jednu granuly 
+n = 0:velikostokna-1;                   %po√®et vzork√π pro jednu granuly 
 t = n/fs;
 
 %% zvuk
@@ -117,13 +117,13 @@ t = n/fs;
 %     Hann = hann(velikostokna,'periodic'); %,'periodic'
 %     Hann = Hann';
 sy=0;
-%% ob·lka pro granule
+%% ob√°lka pro granule
 
 tic;
 for i = 1: length(Value)  
 
     velikostokna=round((fs/1000)*(trvanigranule/(2.^Y(i))));
-    n = 0:velikostokna-1;                   %poËet vzork˘ pro jednu granuly 
+    n = 0:velikostokna-1;                   %po√®et vzork√π pro jednu granuly 
     t = n/fs;
     sx=ones(1,velikostokna);
     
