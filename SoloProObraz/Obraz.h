@@ -6,7 +6,7 @@ class Obraz : public Component
 {
 public:
     Obraz();        
-    // vykreslení obrazu
+    // vykreslenÃ­ obrazu
     void paint(Graphics& g) override; 
     Image loadedImage; 
 };
