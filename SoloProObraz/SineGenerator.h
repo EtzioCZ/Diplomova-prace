@@ -11,10 +11,10 @@ public:
           indexObrazu(indexObrazu)
     {
     }
-    // vıpoèet hodnoty tabulky pro zvolenou frekvenci
+    // vÃ½poÃ¨et hodnoty tabulky pro zvolenou frekvenci
     void setFrequency(float frequency, float sampleRate);      
 
-    // vrátí další prvek z tabulky 
+    // vrÃ¡tÃ­ dalÅ¡Ã­ prvek z tabulky 
     forcedinline float getNextSample() noexcept { 
 
         auto index0 = (unsigned int)currentIndex;
@@ -26,7 +26,7 @@ public:
         auto value0 = table[index0];
         auto value1 = table[index1];
 
-        // vıpoèet interpolace
+        // vÃ½poÃ¨et interpolace
         float currentSample = value0 + frac * (value1 - value0); 
       
         if ((currentIndex += tableDelta) > tableSize)
@@ -35,7 +35,7 @@ public:
         return currentSample;
     }
 
-    // pomocné promìnné
+    // pomocnÃ© promÃ¬nnÃ©
     float currentIndex = 0.0f, tableDelta = 0.0f;
 private:
 
