@@ -9,7 +9,7 @@ public:
 
     Image nahledImage;
 
-    // vykreslení náhledu
+    // vykreslenÃ­ nÃ¡hledu
     void paint(Graphics& g) override
     {
         g.setColour(Colours::white);
