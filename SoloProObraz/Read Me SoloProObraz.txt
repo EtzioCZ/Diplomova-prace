@@ -1,4 +1,4 @@
-Nejprve zkuste aplikaci spustit.
+Nejprve zkuste aplikaci spustit ze složky distribuce
 
 Jestliže zahlásí chybu v podobě chybějící knihovny, nainstalujte si balíček knihoven MS VisualStudia.
 Postačí verze se stejným počtem bitů jako váš operační systém.
